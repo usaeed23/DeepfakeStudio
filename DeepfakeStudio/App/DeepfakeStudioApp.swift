@@ -9,3 +9,15 @@ struct DeepfakeStudioApp: App {
         }
     }
 }
+
+struct ContentView: View {
+    @StateObject private var camera = LiveCameraViewModel()
+
+    var body: some View {
+        NavigationStack {
+            LiveCameraView(camera: camera)
+                .navigationTitle("Live Studio")
+                .navigationBarTitleDisplayMode(.inline)
+        }
+    }
+}
